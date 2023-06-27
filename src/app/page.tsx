@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import styles from "./about/page.module.css";
 
 export default function Home() {
   return (
@@ -16,19 +16,19 @@ export default function Home() {
           <nav id="navbar" className="navbar">
             <ul>
               <li>
-                <a href="index.html" className="active">
+                <a href="index" className="active">
                   Home
                 </a>
               </li>
               <li>
-                <a href="about.html">About</a>
+                <a href="about">About</a>
               </li>
               <li>
-                <a href="services.html">Services</a>
+                <a href="services">Services</a>
               </li>
 
               <li>
-                <a href="contact.html">Contact</a>
+                <a href="contact">Contact</a>
               </li>
             </ul>
           </nav>
@@ -82,35 +82,35 @@ export default function Home() {
             className="carousel-item active"
             style={{
               backgroundImage:
-                "url(assets/img/hero-carousel/hero-carousel-1.jpg)",
+                "url(assets/img/hero-carousel/hero-carousel-1.jpeg)",
             }}
           ></div>
           <div
             className="carousel-item"
             style={{
               backgroundImage:
-                "url(assets/img/hero-carousel/hero-carousel-2.jpg)",
+                "url(assets/img/hero-carousel/hero-carousel-2.jpeg)",
             }}
           ></div>
           <div
             className="carousel-item"
             style={{
               backgroundImage:
-                "url(assets/img/hero-carousel/hero-carousel-3.jpg)",
+                "url(assets/img/hero-carousel/hero-carousel-3.jpeg)",
             }}
           ></div>
           <div
             className="carousel-item"
             style={{
               backgroundImage:
-                "url(assets/img/hero-carousel/hero-carousel-4.jpg)",
+                "url(assets/img/hero-carousel/hero-carousel-4.jpeg)",
             }}
           ></div>
           <div
             className="carousel-item"
             style={{
               backgroundImage:
-                "url(assets/img/hero-carousel/hero-carousel-5.jpg)",
+                "url(assets/img/hero-carousel/hero-carousel-5.jpeg)",
             }}
           ></div>
 
@@ -396,7 +396,7 @@ export default function Home() {
               <div
                 className="col-lg-6 img-bg"
                 style={{
-                  backgroundImage: "url(assets/img/alt-services-home.jpg)",
+                  backgroundImage: "url(assets/img/alt-services-home.jpeg)",
                 }}
                 data-aos="zoom-in"
                 data-aos-delay="100"

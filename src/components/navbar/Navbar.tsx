@@ -35,7 +35,7 @@ const Navbar = ({ flag="0" }) => {
                 </a>
               </li>
               <li>
-                <a href="contact" className={`${flag == "4" ? "active" : ""}`}>
+                <a href="login">
                   Sign in
                 </a>
               </li>

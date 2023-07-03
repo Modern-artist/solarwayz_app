@@ -1,0 +1,161 @@
+.LoginBox {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-image: url("../../../public/assets/img/bgImg.png");
+  background-size: contain;
+  overflow: hidden;
+
+  .sideImg {
+    height: 100vh;
+  }
+  .logo {
+    position: absolute;
+    margin: 28px 72px;
+    top: 0;
+    left: 0;
+    width: 64px;
+    span {
+      margin: 0 20px;
+      font-weight: bold;
+      font-size: 1.4rem;
+      color: whitesmoke;
+    }
+  }
+  .formContainer {
+    width: 100%;
+    height: 100%;
+    // background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .regForm {
+      display: flex;
+      background-color: rgb(237, 237, 237);
+      padding: 40px;
+      border-radius: 20px;
+      background-color: transparent;
+      width: 80%;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      .formInp {
+        display: flex;
+        font-size: 20px;
+        // height: 92px;
+        padding: 20px 10px;
+        color: #535353;
+        align-items: center;
+        width: 100%;
+        border-radius: 8px;
+        border: 4px solid #bfbfbf;
+        background: #fff;
+        box-shadow: 4px 4px 0px 0px #bfbfbf;
+      }
+      .loginBtn {
+        display: flex;
+        // height: 92px;
+        // padding: 0px 148px;
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: #fff;
+        margin: 40px 0 0 0;
+        padding: 12px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        align-self: stretch;
+        border-radius: 8px;
+        border: 2px solid #71c6ff;
+        background: #18a0fb;
+        transition: 0.2s ease-in-out;
+      }
+      .loginBtn:hover {
+        scale: 1.01;
+        box-shadow: 4px 4px 0px 0px #71c6ff;
+      }
+      .contactForm{
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+      }
+
+    }
+    .loginForm {
+      display: flex;
+      background-color: rgb(237, 237, 237);
+      padding: 40px;
+      border-radius: 20px;
+      background-color: transparent;
+      //   border: 2px solid red;
+      width: 500px;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      .formInp {
+        display: flex;
+        font-size: 20px;
+        // height: 92px;
+        padding: 20px 10px;
+        color: #535353;
+        align-items: center;
+        align-self: stretch;
+        border-radius: 8px;
+        border: 4px solid #bfbfbf;
+        background: #fff;
+        box-shadow: 4px 4px 0px 0px #bfbfbf;
+      }
+      .loginBtn {
+        display: flex;
+        // height: 92px;
+        // padding: 0px 148px;
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: #fff;
+        margin: 40px 0 0 0;
+        padding: 12px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        align-self: stretch;
+        border-radius: 8px;
+        border: 2px solid #71c6ff;
+        background: #18a0fb;
+        transition: 0.2s ease-in-out;
+      }
+      .loginBtn:hover {
+        scale: 1.01;
+        box-shadow: 4px 4px 0px 0px #71c6ff;
+      }
+    }
+  }
+}
+@media (max-width: 1000px) {
+    .sideImg {
+        display: none;
+    }
+    .logoText{
+        color: #000 !important;
+    }
+    
+}
+@media screen and (max-width: 500px) {
+  .regForm{
+    width: 100% !important;
+    gap: 20px !important;
+    formInp{
+    font-size: 16px !important;
+    padding: 8px;
+    background-color: #000 !important;
+  }
+  }
+  .contactForm{
+    gap: 20px !important;
+    width: 100%;
+    flex-direction: column !important;
+  }
+  formInp{
+    font-size: 16px !important;
+  }
+    
+}

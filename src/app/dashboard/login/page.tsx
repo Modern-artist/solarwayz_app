@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import "./login.scss";
 const page = () => {
   return (
@@ -18,7 +18,7 @@ const page = () => {
           <button className="loginBtn">Login</button>
           <span>
             Do you have an account?{" "}
-            <a href="/register">
+            <a href="/dashboard/register">
               <b>Sign Up</b>
             </a>
           </span>
@@ -26,6 +26,6 @@ const page = () => {
       </div>
     </div>
   );
-}
+};
 
-export default page
+export default page;

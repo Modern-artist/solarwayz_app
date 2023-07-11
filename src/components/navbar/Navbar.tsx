@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-const Navbar = ({ flag="0" }) => {
+const Navbar = ({ flag = "0" }) => {
   return (
     <div>
       <header id="header" className="header d-flex align-items-center">
@@ -35,9 +35,7 @@ const Navbar = ({ flag="0" }) => {
                 </a>
               </li>
               <li>
-                <a href="login">
-                  Sign in
-                </a>
+                <a href="/dashboard/login">Sign in</a>
               </li>
             </ul>
           </nav>
@@ -47,4 +45,4 @@ const Navbar = ({ flag="0" }) => {
   );
 };
 
-export default Navbar
+export default Navbar;

@@ -1,6 +1,9 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import "./login.scss";
 const page = () => {
+  const [name, setName] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   return (
     <div className="LoginBox">
       <img className="sideImg" src="../../assets/img/loginImg.png" alt="" />

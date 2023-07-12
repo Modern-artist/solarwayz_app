@@ -1,6 +1,50 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import "../login/login.scss";
 const page = () => {
+  // useState for every input
+  const [name, setName] = useState<string>("");
+  const [location, setLocation] = useState<string>("");
+  const [pno, setPno] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
+  // handle form submit
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    // Validation checks
+    if (name.trim() === "") {
+      console.error("Name is required");
+      return;
+    }
+
+    if (location.trim() === "") {
+      console.error("Location is required");
+      return;
+    }
+
+    if (pno.trim() === "") {
+      console.error("Phone number is required");
+      return;
+    }
+
+    if (email.trim() === "") {
+      console.error("Email is required");
+      return;
+    }
+
+    if (password.trim() === "") {
+      console.error("Password is required");
+      return;
+    }
+
+    // If all validations pass, proceed with form submission or further logic
+    console.log("Form submitted");
+    // Additional logic...
+  };
+
   return (
     <div className="LoginBox">
       <img className="sideImg" src="../../assets/img/loginImg.png" alt="" />
@@ -11,23 +55,52 @@ const page = () => {
         </a>
       </div>
       <div className="formContainer">
-        <div className="regForm">
-          <h2>Register Account</h2>
-          <input className="formInp" type="text" placeholder="Name" />
-          <input className="formInp" type="text" placeholder="Location" />
-          <div className="contactForm">
-            <input className="formInp" type="text" placeholder="Phone number" />
-            <input className="formInp" type="text" placeholder="E-mail ID" />
+        <form onSubmit={handleSubmit}>
+          <div className="regForm">
+            <h2>Register Account</h2>
+            <input
+              className="formInp"
+              type="text"
+              placeholder="Name"
+              onChange={(e) => setName(e.target.value)}
+            />
+            <input
+              className="formInp"
+              type="text"
+              placeholder="Location"
+              onChange={(e) => setLocation(e.target.value)}
+            />
+            <div className="contactForm">
+              <input
+                className="formInp"
+                type="text"
+                placeholder="Phone number"
+                onChange={(e) => setPno(e.target.value)}
+              />
+              <input
+                className="formInp"
+                type="text"
+                placeholder="E-mail ID"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <input
+              className="formInp"
+              type="password"
+              placeholder="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button type="submit" className="loginBtn">
+              Login
+            </button>
+            <span>
+              Do you have an account?{" "}
+              <a href="/login">
+                <b>Sign In</b>
+              </a>
+            </span>
           </div>
-          <input className="formInp" type="password" placeholder="password" />
-          <button className="loginBtn">Login</button>
-          <span>
-            Do you have an account?{" "}
-            <a href="/login">
-              <b>Sign In</b>
-            </a>
-          </span>
-        </div>
+        </form>
       </div>
     </div>
   );

@@ -3,10 +3,10 @@ import "../login/login.scss";
 const page = () => {
   return (
     <div className="LoginBox">
-      <img className="sideImg" src="./assets/img/loginImg.png" alt="" />
+      <img className="sideImg" src="../../assets/img/loginImg.png" alt="" />
       <div className="logo">
         <a href="/" className="d-flex align-items-center">
-          <img src="assets/img/logo.svg" alt="" />
+          <img src="../../assets/img/logo.svg" alt="" />
           <span className="logoText">SOLARWAYZ TECHNOLOGIES</span>
         </a>
       </div>

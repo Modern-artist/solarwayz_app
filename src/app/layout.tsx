@@ -1,7 +1,9 @@
+"use client;";
 import Head from "next/head";
-
+import Provider from "@/components/Provider";
 // import "./globals.css";
 import { Inter } from "next/font/google";
+
 // import "./assets/vendor/bootstrap/js/bootstrap.bundle.min.js";
 // import "./assets/vendor/aos/aos.js";
 // import "./assets/vendor/glightbox/js/glightbox.min.js";
@@ -19,8 +21,10 @@ export const metadata = {
 
 export default function RootLayout({
   children,
+  session,
 }: {
   children: React.ReactNode;
+  session: any;
 }) {
   return (
     <html>
@@ -53,7 +57,7 @@ export default function RootLayout({
         <link href="assets/css/index.css" rel="stylesheet" />
       </head>
       <body className={inter.className}>
-        {children}
+        <Provider session={session}>{children}</Provider>
         <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="assets/vendor/aos/aos.js"></script>
         <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>

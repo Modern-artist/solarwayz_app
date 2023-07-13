@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import "../login/login.scss";
+import { registerUser } from "@/axios/auth";
 const page = () => {
   // useState for every input
   const [name, setName] = useState<string>("");
@@ -11,7 +12,7 @@ const page = () => {
   const [password, setPassword] = useState<string>("");
 
   // handle form submit
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     // Validation checks
@@ -42,6 +43,9 @@ const page = () => {
 
     // If all validations pass, proceed with form submission or further logic
     console.log("Form submitted");
+
+    const res = await registerUser({ name, location, pno, email, password });
+    console.log("response from register user", res);
     // Additional logic...
   };
 

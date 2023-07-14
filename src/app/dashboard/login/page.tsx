@@ -1,12 +1,15 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./login.scss";
 import { logInUser, registerUser } from "@/axios/auth";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 const page = () => {
   const [name, setName] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [authenticated, setauthenticated] = useState(false);
   const { data: session } = useSession();
+  const router = useRouter();
   console.log("sesssion value is ", session);
   // handle form submit
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -32,6 +35,13 @@ const page = () => {
     console.log("Form submitted with", name, password, res);
     // Additional logic...
   };
+  if (session) {
+    window.location.href = "/dashboard";
+  }
+  // useEffect(() => {
+  //   if (authenticated) {
+  //   }
+  // }, []);
 
   return (
     <div className="LoginBox">

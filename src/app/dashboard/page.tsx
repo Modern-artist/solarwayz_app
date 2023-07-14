@@ -1,15 +1,14 @@
 "use client";
-import "./dashboard.scss"
+import "./dashboard.scss";
 import Navbar from "@/components/navbar/Navbar";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import SearchBar from '@/components/searchBar/SearchBar';
-import TableData from '@/components/table/TableData';
-import Footer from '@/components/footer/Footer';
-import Newform from '@/components/form/Newform';
+import SearchBar from "@/components/searchBar/SearchBar";
+import TableData from "@/components/table/TableData";
+import Footer from "@/components/footer/Footer";
+import Newform from "@/components/form/Newform";
 import { userAgent } from "next/server";
-
 
 export default function page() {
   const { data: session, status } = useSession();
@@ -28,7 +27,7 @@ export default function page() {
   }, []);
   if (session) {
     return (
-           <div>
+      <div>
         {/* <div>
           dashboard <h1>{session.user?.name}</h1>
         </div> */}
@@ -61,20 +60,27 @@ export default function page() {
                     </ol>
                   </div>
                 </div>
-                <button onClick={() => signOut()}>
-                  SignOut from the application
-                </button>
                 <div className="searchFilter">
                   <div className="details">
                     <div className="imgName">
-                                    <img src="../../assets/img/myImg.jpeg" className='profile' alt="" />
+                      <img
+                        src="../../assets/img/myImg.jpeg"
+                        className="profile"
+                        alt=""
+                      />
                       <strong>{session.user?.name}</strong>
 
                       <span>RecordID: 2183132</span>
                     </div>
-                    <div className="imgName"><i className="fa fa-map-marker" aria-hidden="true"></i> <span>Jamshedpur Jharkhand</span></div>
+                    <div className="imgName">
+                      <i className="fa fa-map-marker" aria-hidden="true"></i>{" "}
+                      <span>Jamshedpur Jharkhand</span>
+                    </div>
                     {/* {console.log(session)} */}
-                    <div className="imgName"><i className="fa fa-envelope" aria-hidden="true"></i><span>{session.user?.email}</span></div>
+                    <div className="imgName">
+                      <i className="fa fa-envelope" aria-hidden="true"></i>
+                      <span>{session.user?.email}</span>
+                    </div>
                     <div className="allChips">
                       <div className="chip">Sales Proposal</div>
                       <div className="chip">Survey</div>

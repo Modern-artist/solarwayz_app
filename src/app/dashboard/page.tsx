@@ -3,19 +3,21 @@ import Navbar from "@/components/navbar/Navbar";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import SearchBar from '@/components/searchBar/SearchBar';
-import TableData from '@/components/table/TableData';
-import Footer from '@/components/footer/Footer';
-import Newform from '@/components/form/Newform';
+import SearchBar from "@/components/searchBar/SearchBar";
+import TableData from "@/components/table/TableData";
+import Footer from "@/components/footer/Footer";
+import Newform from "@/components/form/Newform";
 
 export default function page() {
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
   const [authenticated, setauthenticated] = useState(false);
   const router = useRouter();
 
-  //   if (session == null) {
-  //     window.location.href = "/dashboard/login";
-  //   }
+  // if (session == null) {
+  //   window.location.href = "/dashboard/login";
+  // }
+  console.log(session, status);
+
   useEffect(() => {
     // if (!authenticated) {
     //   router.push("/dashboard/login");
@@ -23,18 +25,12 @@ export default function page() {
   }, []);
   if (session) {
     return (
-      <div>
-        <div>
-          dashboard <h1>{session.user?.name}</h1>
-        </div>
+      <div style={{ marginTop: "100px" }}>
         {session ? (
           <>
-            <button onClick={() => signOut()}>
-              SignOut from the application
-            </button>
-            <div>
+            <div style={{ marginTop: "-100px" }}>
               {/* <Newform/> */}
-              <Navbar flag='4' />
+              <Navbar flag="4" />
               <main>
                 <div
                   className="breadcrumbs d-flex justify-content-center align-items-center"
@@ -56,10 +52,17 @@ export default function page() {
                     </ol>
                   </div>
                 </div>
+                <button onClick={() => signOut()}>
+                  SignOut from the application
+                </button>
                 <div className="searchFilter">
                   <div className="details">
                     <div className="imgName">
-                      <img src="../../assets/img/myImg.jpeg" className='profile' alt="" />
+                      <img
+                        src="../../assets/img/myImg.jpeg"
+                        className="profile"
+                        alt=""
+                      />
                       <strong>Seguerre Michel</strong>
                       <span>RecordID: 2183132</span>
                     </div>
@@ -72,10 +75,7 @@ export default function page() {
                 <Footer />
               </main>
             </div>
-            </>
-            
-          
-          
+          </>
         ) : (
           <></>
         )}

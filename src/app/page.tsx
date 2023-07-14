@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./about/page.module.css";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Home() {
   return (

@@ -4,13 +4,16 @@ import "./login.scss";
 import { logInUser, registerUser } from "@/axios/auth";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const page = () => {
   const [name, setName] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [authenticated, setauthenticated] = useState(false);
-  const { data: session } = useSession();
+  const { data: session, status, update } = useSession();
   const router = useRouter();
-  console.log("sesssion value is ", session);
+  // console.log("sesssion value is ", session, status, update);
   // handle form submit
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -31,7 +34,27 @@ const page = () => {
       email: name,
       password,
       redirect: false,
-    });
+      callbackUrl: "/dashboard",
+    })
+      .then((res) => {
+        if (res?.error) {
+          toast.error(res.error, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        }
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
     console.log("Form submitted with", name, password, res);
     // Additional logic...
   };
@@ -87,6 +110,18 @@ const page = () => {
           <></>
         )}
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 };

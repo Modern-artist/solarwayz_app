@@ -32,14 +32,14 @@ const handler = NextAuth({
         console.log("this is the user we found in the database ", user);
         let pwValid = false;
         if (!user) {
-          throw new Error("No user with a matching email was found.");
+          throw new Error("No user found !");
         } else {
           // Use the comparePassword method we defined in our user.js Model file to authenticate
           pwValid = user.password === credentials.password ? true : false;
         }
 
         if (!pwValid) {
-          throw new Error("Your password is invalid");
+          throw new Error("Password incorrect!");
         } else {
           console.log("user successfully logged in");
           return user;

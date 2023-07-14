@@ -1,6 +1,9 @@
-import React from "react";
+"use client";
+import { AiOutlinePoweroff } from "react-icons/ai";
+import { signOut, useSession } from "next-auth/react";
 
 const Navbar = ({ flag = "0" }) => {
+  const { data: session } = useSession();
   return (
     <div>
       <header id="header" className="header d-flex align-items-center">
@@ -34,9 +37,18 @@ const Navbar = ({ flag = "0" }) => {
                   Contact
                 </a>
               </li>
-              <li>
-                <a href="/dashboard/login">Sign in</a>
-              </li>
+              {session ? (
+                <li>
+                  <a href="#" onClick={() => signOut({ callbackUrl: "/" })}>
+                    <AiOutlinePoweroff color="white" size={20} />
+                    &nbsp; Sign Out
+                  </a>
+                </li>
+              ) : (
+                <li>
+                  <a href="/dashboard/login"> Sign in</a>
+                </li>
+              )}
             </ul>
           </nav>
         </div>

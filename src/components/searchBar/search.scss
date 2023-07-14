@@ -1,0 +1,55 @@
+.SearchBar{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.searchInp{
+    padding: 12px 10px;
+    width: 420px;
+    border: 2px solid #EAF5FF;
+    border-radius: 99px;
+    text-align: center;
+}
+
+.btnDiv{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    .SrcBtn{
+        background-color: #EAF5FF;
+        width: 100px;
+    }
+    .filterBtn{
+        width: auto;
+        background-color: #EAF5FF;
+        aspect-ratio: 1;
+        display: flex;
+        justify-content: center;
+        border-radius: 100px;
+        align-items: center;
+        img{
+            width: 40px;
+        }
+    }
+    .createBtn{
+        flex: 1 0 0;
+        font-size: large;
+        padding: 12px 20px;
+        border-radius: 100px;
+        text-align: center;
+    }
+    .notifyBtn{
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        aspect-ratio: 1;
+        img{
+            width: 40px;
+        }
+    }
+}

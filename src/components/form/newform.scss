@@ -1,0 +1,45 @@
+.newform {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row-reverse;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.intakeForm {
+    gap: 20px;
+    padding: 40px;
+    width: 780px;
+    display: flex;
+    flex-direction: column;
+    background-color: #F2F2F2;
+    z-index: 1000;
+    align-items: center;
+    overflow-y: scroll;
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 20px ;
+        .inp {
+            background-color: rgb(255, 255, 255);
+            border-radius: 8px;
+            padding: 8px 40px 8px 40px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 8px;
+            p{
+                margin: 0;
+            }
+            div label{
+                padding: 0 20px;
+            }
+            input{
+            border-radius: 8px;
+                padding: 8px 4px;
+                border: 2px solid gainsboro;
+            }
+        }
+    }
+}

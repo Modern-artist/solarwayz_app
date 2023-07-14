@@ -6,7 +6,7 @@
 }
 
 .searchInp{
-    padding: 12px 10px;
+    padding: 20px 10px;
     width: 420px;
     border: 2px solid #EAF5FF;
     border-radius: 99px;
@@ -24,6 +24,7 @@
     }
     .filterBtn{
         width: auto;
+        padding: 24px;
         background-color: #EAF5FF;
         aspect-ratio: 1;
         display: flex;
@@ -35,11 +36,13 @@
         }
     }
     .createBtn{
+        display: flex;
         flex: 1 0 0;
         font-size: large;
         padding: 12px 20px;
         border-radius: 100px;
-        text-align: center;
+        justify-content: center;
+        align-items: center;
     }
     .notifyBtn{
         width: auto;

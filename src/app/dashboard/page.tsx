@@ -1,4 +1,5 @@
 "use client";
+import "./dashboard.scss"
 import Navbar from "@/components/navbar/Navbar";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
@@ -7,6 +8,7 @@ import SearchBar from '@/components/searchBar/SearchBar';
 import TableData from '@/components/table/TableData';
 import Footer from '@/components/footer/Footer';
 import Newform from '@/components/form/Newform';
+import { userAgent } from "next/server";
 
 export default function page() {
   const { data: session } = useSession();
@@ -24,14 +26,14 @@ export default function page() {
   if (session) {
     return (
       <div>
-        <div>
+        {/* <div>
           dashboard <h1>{session.user?.name}</h1>
-        </div>
+        </div> */}
         {session ? (
           <>
-            <button onClick={() => signOut()}>
+            {/* <button onClick={() => signOut()}>
               SignOut from the application
-            </button>
+            </button> */}
             <div>
               {/* <Newform/> */}
               <Navbar flag='4' />
@@ -60,11 +62,12 @@ export default function page() {
                   <div className="details">
                     <div className="imgName">
                       <img src="../../assets/img/myImg.jpeg" className='profile' alt="" />
-                      <strong>Seguerre Michel</strong>
+                      <strong>{session.user?.name}</strong>
                       <span>RecordID: 2183132</span>
                     </div>
-                    <span>37 Robinson St, Woonsocket, RI 02895, USA</span>
-                    <span>Seguerremichel@gmail.com</span>
+                    <span><i className="fa fa-map-marker" aria-hidden="true"></i> Jamshedpur Jharkhand</span>
+                    {/* {console.log(session)} */}
+                    <span><i className="fa fa-envelope" aria-hidden="true"></i>{" "}{session.user?.email}</span>
                   </div>
                   <SearchBar />
                 </div>

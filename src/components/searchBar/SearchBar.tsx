@@ -8,8 +8,11 @@ const SearchBar = () => {
             </form>
             <div className="btnDiv">
                 <div className="createBtn SrcBtn">Create</div>
-                <div className="filterBtn SrcBtn">+</div>
-                <div className="notifyBtn SrcBtn"><img src="../../assets/img/logo.svg" alt="" /></div>
+                <div className="filterBtn SrcBtn"><i className="fa fa-filter" aria-hidden="true"></i>
+                </div>
+                <div className="notifyBtn SrcBtn"><i className="fa fa-flag-o" aria-hidden="true"></i>
+
+                </div>
             </div>
         </div>
     )

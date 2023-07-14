@@ -1,12 +1,15 @@
 "use client";
+import "./dashboard.scss"
 import Navbar from "@/components/navbar/Navbar";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import SearchBar from "@/components/searchBar/SearchBar";
-import TableData from "@/components/table/TableData";
-import Footer from "@/components/footer/Footer";
-import Newform from "@/components/form/Newform";
+import SearchBar from '@/components/searchBar/SearchBar';
+import TableData from '@/components/table/TableData';
+import Footer from '@/components/footer/Footer';
+import Newform from '@/components/form/Newform';
+import { userAgent } from "next/server";
+
 
 export default function page() {
   const { data: session, status } = useSession();
@@ -25,10 +28,16 @@ export default function page() {
   }, []);
   if (session) {
     return (
-      <div style={{ marginTop: "100px" }}>
+           <div>
+        {/* <div>
+          dashboard <h1>{session.user?.name}</h1>
+        </div> */}
         {session ? (
           <>
-            <div style={{ marginTop: "-100px" }}>
+            {/* <button onClick={() => signOut()}>
+              SignOut from the application
+            </button> */}
+            <div>
               {/* <Newform/> */}
               <Navbar flag="4" />
               <main>
@@ -58,16 +67,21 @@ export default function page() {
                 <div className="searchFilter">
                   <div className="details">
                     <div className="imgName">
-                      <img
-                        src="../../assets/img/myImg.jpeg"
-                        className="profile"
-                        alt=""
-                      />
-                      <strong>Seguerre Michel</strong>
+                                    <img src="../../assets/img/myImg.jpeg" className='profile' alt="" />
+                      <strong>{session.user?.name}</strong>
+
                       <span>RecordID: 2183132</span>
                     </div>
-                    <span>37 Robinson St, Woonsocket, RI 02895, USA</span>
-                    <span>Seguerremichel@gmail.com</span>
+                    <div className="imgName"><i className="fa fa-map-marker" aria-hidden="true"></i> <span>Jamshedpur Jharkhand</span></div>
+                    {/* {console.log(session)} */}
+                    <div className="imgName"><i className="fa fa-envelope" aria-hidden="true"></i><span>{session.user?.email}</span></div>
+                    <div className="allChips">
+                      <div className="chip">Sales Proposal</div>
+                      <div className="chip">Survey</div>
+                      <div className="chip">Set Plan</div>
+                      <div className="chip">PE Stamping</div>
+                      <div className="chip">Permitting</div>
+                    </div>
                   </div>
                   <SearchBar />
                 </div>

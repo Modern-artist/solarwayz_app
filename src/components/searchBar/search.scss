@@ -3,10 +3,12 @@
     flex-direction: column;
     gap: 20px;
     flex-wrap: wrap;
+    
+    // justify-content: space-between;
 }
 
 .searchInp{
-    padding: 12px 10px;
+    padding: 20px 10px;
     width: 420px;
     border: 2px solid #EAF5FF;
     border-radius: 99px;
@@ -21,9 +23,11 @@
     .SrcBtn{
         background-color: #EAF5FF;
         width: 100px;
+        font-size: 1.4rem;
     }
     .filterBtn{
         width: auto;
+        padding: 24px;
         background-color: #EAF5FF;
         aspect-ratio: 1;
         display: flex;
@@ -35,11 +39,19 @@
         }
     }
     .createBtn{
+        display: flex;
         flex: 1 0 0;
         font-size: large;
         padding: 12px 20px;
         border-radius: 100px;
-        text-align: center;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        color: rgb(56, 56, 56);
+        i{
+            font-size: 2rem;
+            color: #218CD9;
+        }
     }
     .notifyBtn{
         width: auto;

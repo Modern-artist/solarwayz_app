@@ -3,6 +3,8 @@
     flex-direction: column;
     gap: 20px;
     flex-wrap: wrap;
+    
+    // justify-content: space-between;
 }
 
 .searchInp{
@@ -21,6 +23,7 @@
     .SrcBtn{
         background-color: #EAF5FF;
         width: 100px;
+        font-size: 1.4rem;
     }
     .filterBtn{
         width: auto;
@@ -43,6 +46,12 @@
         border-radius: 100px;
         justify-content: center;
         align-items: center;
+        gap: 8px;
+        color: rgb(56, 56, 56);
+        i{
+            font-size: 2rem;
+            color: #218CD9;
+        }
     }
     .notifyBtn{
         width: auto;

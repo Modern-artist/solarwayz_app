@@ -65,9 +65,16 @@ export default function page() {
                       <strong>{session.user?.name}</strong>
                       <span>RecordID: 2183132</span>
                     </div>
-                    <span><i className="fa fa-map-marker" aria-hidden="true"></i> Jamshedpur Jharkhand</span>
+                    <div className="imgName"><i className="fa fa-map-marker" aria-hidden="true"></i> <span>Jamshedpur Jharkhand</span></div>
                     {/* {console.log(session)} */}
-                    <span><i className="fa fa-envelope" aria-hidden="true"></i>{" "}{session.user?.email}</span>
+                    <div className="imgName"><i className="fa fa-envelope" aria-hidden="true"></i><span>{session.user?.email}</span></div>
+                    <div className="allChips">
+                      <div className="chip">Sales Proposal</div>
+                      <div className="chip">Survey</div>
+                      <div className="chip">Set Plan</div>
+                      <div className="chip">PE Stamping</div>
+                      <div className="chip">Permitting</div>
+                    </div>
                   </div>
                   <SearchBar />
                 </div>
